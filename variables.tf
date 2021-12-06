@@ -126,6 +126,6 @@ variable "http_target_http_method" {
 variable "region" {
   description = "Region where the scheduler job resides."
   type        = string
-  default     = ""
+  default     = "asia-south1"
 }
 
