@@ -6,7 +6,8 @@ resource "google_cloud_scheduler_job" "scheduler" {
   time_zone        = var.time_zone
   attempt_deadline = var.attempt_deadline
 
-  
+
+
   retry_config {
 
     retry_count          = var.retry_retry_count
@@ -17,20 +18,24 @@ resource "google_cloud_scheduler_job" "scheduler" {
 
 
   }
-  app_engine_http_target {
+  http_target {
 
-    http_method = var.app_engine_http_method
-    app_engine_routing {
-
-      service  = var.app_engine_routing_service
-      version  = var.app_engine_routing_version
-      instance = var.app_engine_routing_instance
-
-    }
-    relative_uri = var.app_engine_relative_uri
+    uri = var.uri
 
   }
-  
+  app_engine_http_target {
+
+    http_method = var.http_method
+    app_engine_routing {
+
+      service  = var.service
+      instance = var.instance
+
+    }
+    relative_uri = var.relative_uri
+
+  }
+
   region  = var.region
   project = var.project
 

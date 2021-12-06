@@ -10,7 +10,7 @@ variable "pubsub_topic_name" {
   description = "The full resource name for the Cloud Pub/Sub topic to which messages will be published when a job is delivered."
   type        = string
 }
-variable "app_engine_relative_uri" {
+variable "uri" {
   description = "The relative URI."
   type        = string
 }
@@ -24,7 +24,11 @@ variable "project" {
   description = "The ID of the project in which the resource belongs."
   type        = string
 }
- 
+
+variable "relative_uri" {
+  description = "The relative URL must begin with / and must be a valid HTTP relative URL. It can contain a path, query string arguments, and # fragments."
+  type        = string
+}
 // Optional
 
 variable "description" {
@@ -90,42 +94,30 @@ variable "pubsub_data" {
 variable "pubsub_attributes" {
   description = " Attributes for PubsubMessage. "
   type        = map(string)
-  default     = {"mass":"1.3kg"}
+  default     = { "mass" : "1.3kg" }
 }
 
-variable "app_engine_http_method" {
+variable "http_method" {
   description = "Which HTTP method to use for the request."
   type        = string
   default     = "GET"
 }
 
-variable "app_engine_routing_service" {
+variable "service" {
   description = "App service."
   type        = string
   default     = "default"
 }
 
-variable "app_engine_routing_version" {
-  description = "App version. "
-  type        = string
-  default     = "default"
-}
-
-variable "app_engine_routing_instance" {
+variable "instance" {
   description = "App instance."
   type        = string
   default     = "default"
 }
 
-variable "http_target_http_method" {
-  description = "Which HTTP method to use for the request."
-  type        = string
-  default     = "POST"
-}
-
 variable "region" {
   description = "Region where the scheduler job resides."
   type        = string
-  default     = "asia-south1"
+  default     = ""
 }
 
