@@ -91,12 +91,6 @@ variable "pubsub_data" {
   default     = "base64-encoded()"
 }
 
-variable "pubsub_attributes" {
-  description = " Attributes for PubsubMessage. "
-  type        = map(string)
-  default     = { "mass" : "1.3kg" }
-}
-
 variable "http_method" {
   description = "Which HTTP method to use for the request."
   type        = string
