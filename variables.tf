@@ -118,6 +118,6 @@ variable "instance" {
 variable "region" {
   description = "Region where the scheduler job resides."
   type        = string
-  default     = ""
+  default     = "asia-south1"
 }
 
