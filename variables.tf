@@ -34,7 +34,7 @@ variable "relative_uri" {
 variable "description" {
   description = "A human-readable description for the job."
   type        = string
-  default     = "the job seduler job created for the project"
+  default     = "The job seduler job created for the project"
 }
 
 variable "schedule" {
@@ -88,7 +88,7 @@ variable "retry_max_doublings" {
 variable "pubsub_data" {
   description = "The message payload for PubsubMessage. "
   type        = string
-  default     = "base64-encoded()"
+  default     = "Started"
 }
 
 variable "http_method" {

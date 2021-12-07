@@ -16,13 +16,14 @@ resource "google_cloud_scheduler_job" "scheduler" {
     max_backoff_duration = var.retry_max_backoff_duration
     max_doublings        = var.retry_max_doublings
 
-
   }
+
   http_target {
 
     uri = var.uri
 
   }
+
   app_engine_http_target {
 
     http_method = var.http_method
@@ -35,7 +36,6 @@ resource "google_cloud_scheduler_job" "scheduler" {
     relative_uri = var.relative_uri
 
   }
-
   region  = var.region
   project = var.project
 
