@@ -4,7 +4,6 @@ variable "name" {
   description = "The name of the job."
   type        = string
 }
-
 variable "pubsub_topic_name" {
   description = "The full resource name for the Cloud Pub/Sub topic to which messages will be published when a job is delivered."
   type        = string
@@ -13,7 +12,6 @@ variable "uri" {
   description = "The relative URI."
   type        = string
 }
-
 variable "http_target_uri" {
   description = "The full URI path that the request will be sent to."
   type        = string
