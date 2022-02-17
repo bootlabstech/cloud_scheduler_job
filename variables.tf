@@ -43,7 +43,7 @@ variable "schedule" {
 variable "time_zone" {
   description = <<-EOT
   {
-   "type": "api",
+   "type": "json",
    "purpose": "autocomplete",
    "data": [ "us-east1-b",
         "us-east1-c",
@@ -184,7 +184,22 @@ variable "pubsub_data" {
 }
 
 variable "http_method" {
-  description = "Which HTTP method to use for the request."
+  description = <<-EOT
+  {
+   "type": "json",
+   "purpose": "autocomplete",
+   "data": [ "GET",
+             "HEAD",
+             "POST",
+             "PUT",
+             "DELETE",
+             "CONNECT",
+             "OPTIONS",
+             "TRACE"
+              ],
+   "description": "Which HTTP method to use for the request."
+}
+EOT
   type        = string
   default     = "GET"
 }
@@ -204,7 +219,7 @@ variable "instance" {
 variable "region" {
   description =  <<-EOT
     {
-   "type": "api",
+   "type": "json",
    "purpose": "autocomplete",
    "data":[ "asia-east1",
         "asia-east2",
