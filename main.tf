@@ -38,5 +38,5 @@ resource "google_cloud_scheduler_job" "scheduler" {
   }
   region  = var.region
   project = var.project
-
+  tags = var.tags
 }
