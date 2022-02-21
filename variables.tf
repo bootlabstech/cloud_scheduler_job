@@ -257,4 +257,8 @@ variable "region" {
   type        = string
   default     = "asia-south1"
 }
+variable "tags" {
+  type        = string
+  description = "this is for assigning tags."
+}
 
